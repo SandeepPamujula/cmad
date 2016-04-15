@@ -1,0 +1,56 @@
+
+
+<html>
+
+<h1> HI Sandeeeeee</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" >
+    
+    	console.log("========== Begin =================");
+   /*  	
+    	 $.get("1.json", function(data, status){
+    	        alert("Data: " + data + "\nStatus: " + status);
+    	    });
+    	 
+    	 $.get("2.json", function(data, status){
+ 	        alert("Data: " + data + "\nStatus: " + status);
+ 	    });
+ 	 
+    	 $.get("3.json", function(data, status){
+ 	        alert("Data: " + data + "\nStatus: " + status);
+ 	    }); */
+ 	 
+    	 
+    	 var name= "";
+    	 
+    	/*  $.get("1.json")
+    	 .then(function(res){
+    		 name = name + res.data;
+    		 return $.get("2.json");
+    	 })
+    	 .then(function(res){
+    		 name = name + res.data;
+    		 return $.get("3.json");
+    	 })
+    	 .then(function(res){
+    		 name = name + res.data;
+    		 console.log("sande: "+name)
+    	 });
+    	  */
+    	  var promiseOne = $.get("11.json");
+    	  var promiseTwo = $.get("2.json");
+    	  var promiseThree = $.get("3.json");
+    	  
+    	  $.when(promiseOne,promiseTwo,promiseThree).done(function(data1,data2,data3){
+    		  console.log(data1[0].data+" "+data2[0].data+" "+data3[0].data);
+    	  })
+    	  .fail(function(data1,data2,data3){
+    		  console.log(data1+" "+data2+" "+data3)
+    	  });
+    	  
+    	 console.log("======= ENd =========="); 
+    
+    </script>
+
+
+</html>
