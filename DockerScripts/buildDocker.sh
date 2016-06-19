@@ -20,12 +20,12 @@ mvn clean install
 docker build --tag loginms .
 
 echo  "$$$ Create Blog ms docker container $$$"
-cd BlogAppMicroServices/BlogMicroService
+cd ../BlogMicroService
 mvn clean install
 docker build --tag blogms .
 
 echo  "$$$ Create haproxy docker container $$$"
-cd /root/demo2/BlogAppMicroServices/blogapp_haproxy
+cd ../blogapp_haproxy
 docker build --tag haproxylb .
 
 
